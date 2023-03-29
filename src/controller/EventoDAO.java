@@ -32,15 +32,15 @@ public class EventoDAO {
 		
 		
 		try {
-			save(e);
+			//save(e);
 				
 			//Eventi eventoLetto = getById(2l);
 			//System.out.println(eventoLetto);
 			//eventoLetto.setDescrizione("descrizione modificata");
 			//updateEvent(eventoLetto);
 			//delete(eventoLetto);
-			//List <Eventi> lista = findAll();
-			//lista.forEach(ut -> System.out.println(ut));
+			List <Eventi> lista = findAll();
+			lista.forEach(ut -> System.out.println(ut));
 			
 			} catch (Exception exc) {
 				exc.printStackTrace();
