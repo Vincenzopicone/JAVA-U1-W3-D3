@@ -1,7 +1,6 @@
 package model;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 import javax.persistence.*;
 
@@ -18,13 +17,14 @@ public class Eventi implements Serializable {
 	@Column(nullable = false)
 	private String titolo;
 	@Column(nullable = false)
-	private Date dataEvento;
+	private LocalDate dataevento;
 	@Column(nullable = false)
 	private String descrizione;
+	@Enumerated (EnumType.STRING)
 	@Column(nullable = false)
-	private String tipoEvento;
+	private TipoEvento tipoevento;
 	@Column(nullable = false)
-	private Integer numeroMassimoPartecipanti;
+	private Integer numeromassimopartecipanti;
 		
 	public Long getId() {
 		return id;
@@ -38,11 +38,11 @@ public class Eventi implements Serializable {
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
-	public Date getDataEvento() {
-		return dataEvento;
+	public LocalDate getDataEvento() {
+		return dataevento;
 	}
-	public void setDataEvento(Date dataEvento) {
-		this.dataEvento = dataEvento;
+	public void setDataEvento(LocalDate dataEvento) {
+		this.dataevento = dataEvento;
 	}
 	public String getDescrizione() {
 		return descrizione;
@@ -50,22 +50,22 @@ public class Eventi implements Serializable {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public String getTipoEvento() {
-		return tipoEvento;
+	public TipoEvento getTipoEvento() {
+		return tipoevento;
 	}
-	public void setTipoEvento(String tipoEvento) {
-		this.tipoEvento = tipoEvento;
+	public void setTipoEvento(TipoEvento tipoEvento) {
+		this.tipoevento = tipoEvento;
 	}
 	public Integer getNumeroMassimoPartecipanti() {
-		return numeroMassimoPartecipanti;
+		return numeromassimopartecipanti;
 	}
 	public void setNumeroMassimoPartecipanti(Integer numeroMassimoPartecipanti) {
-		this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+		this.numeromassimopartecipanti = numeroMassimoPartecipanti;
 	}
 	@Override
 	public String toString() {
-		return "Eventi [id=" + id + ", titolo=" + titolo + ", dataEvento=" + dataEvento + ", descrizione=" + descrizione
-				+ ", tipoEvento=" + tipoEvento + ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti + "]";
+		return "Eventi [id=" + id + ", titolo=" + titolo + ", dataEvento=" + dataevento + ", descrizione=" + descrizione
+				+ ", tipoEvento=" + tipoevento + ", numeroMassimoPartecipanti=" + numeromassimopartecipanti + "]";
 	}
 	
 	
